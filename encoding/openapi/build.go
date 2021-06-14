@@ -172,6 +172,7 @@ func schemas(g *Generator, inst *cue.Instance) (schemas *ast.StructLit, err erro
 }
 
 func (c *buildContext) build(name string, v cue.Value) *ast.StructLit {
+	fmt.Println("building: "+ name)
 	return newCoreBuilder(c).schema(nil, name, v)
 }
 
