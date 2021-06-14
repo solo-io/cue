@@ -44,6 +44,7 @@ type buildContext struct {
 	descFunc      func(v cue.Value) string
 	fieldFilter   *regexp.Regexp
 	evalDepth     int // detect cycles when resolving references
+	maxDepth      int // cap cycles when resolving references
 
 	schemas *OrderedMap
 
@@ -95,6 +96,7 @@ func schemas(g *Generator, inst *cue.Instance) (schemas *ast.StructLit, err erro
 		schemas:      &OrderedMap{},
 		externalRefs: map[string]*externalType{},
 		fieldFilter:  fieldFilter,
+		maxDepth:     g.MaxDepth,
 	}
 
 	switch g.Version {
@@ -172,7 +174,7 @@ func schemas(g *Generator, inst *cue.Instance) (schemas *ast.StructLit, err erro
 }
 
 func (c *buildContext) build(name string, v cue.Value) *ast.StructLit {
-	fmt.Println("building: "+ name)
+	fmt.Println("building: " + name)
 	return newCoreBuilder(c).schema(nil, name, v)
 }
 
@@ -212,7 +214,7 @@ func (b *builder) schema(core *builder, name string, v cue.Value) *ast.StructLit
 	var c *builder
 	if core == nil && b.ctx.structural {
 		c = newCoreBuilder(b.ctx)
-		c.buildCore(v) // initialize core structure
+		c.buildCore(v, 0) // initialize core structure
 		c.coreSchema()
 	} else {
 		c = newRootBuilder(b.ctx)
@@ -1080,6 +1082,7 @@ type builder struct {
 	keys       []string
 	properties map[string]*builder
 	items      *builder
+
 }
 
 func newRootBuilder(c *buildContext) *builder {

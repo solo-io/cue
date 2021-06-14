@@ -66,6 +66,9 @@ type Config struct {
 	// OpenAPI Schema. It is an error for an CUE value to refer to itself
 	// if this option is used.
 	ExpandReferences bool
+
+	// MaxDepth sets a maximum depth for the generated OpenAPI schema (when references are expanded). Prevents infinite recursions.
+	MaxDepth int
 }
 
 type Generator = Config

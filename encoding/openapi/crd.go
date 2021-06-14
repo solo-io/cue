@@ -46,6 +46,7 @@ package openapi
 import (
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/ast"
+	"fmt"
 )
 
 // newCoreBuilder returns a builder that represents a structural schema.
@@ -108,7 +109,7 @@ func (b *builder) coreSchema() *ast.StructLit {
 // buildCore collects the CUE values for the structural OpenAPI tree.
 // To this extent, all fields of both conjunctions and disjunctions are
 // collected in a single properties map.
-func (b *builder) buildCore(v cue.Value) {
+func (b *builder) buildCore(v cue.Value, depth int) {
 	if !b.ctx.expandRefs {
 		_, r := v.Reference()
 		if len(r) > 0 {
@@ -129,16 +130,16 @@ func (b *builder) buildCore(v cue.Value) {
 				if b.items == nil {
 					b.items = newCoreBuilder(b.ctx)
 				}
-				b.items.buildCore(typ)
+				b.items.buildCore(typ, depth)
 			}
-			b.buildCoreStruct(v)
+			b.buildCoreStruct(v, depth)
 
 		case cue.ListKind:
 			if typ, ok := v.Elem(); ok {
 				if b.items == nil {
 					b.items = newCoreBuilder(b.ctx)
 				}
-				b.items.buildCore(typ)
+				b.items.buildCore(typ, depth)
 			}
 		}
 	}
@@ -151,13 +152,17 @@ func (b *builder) buildCore(v cue.Value) {
 	b.values = append(b.values, v)
 }
 
-func (b *builder) buildCoreStruct(v cue.Value) {
+func (b *builder) buildCoreStruct(v cue.Value, depth int) {
 	op, args := v.Expr()
 	switch op {
 	case cue.OrOp, cue.AndOp:
 		for _, v := range args {
-			b.buildCore(v)
+			b.buildCore(v, depth)
 		}
+	}
+	if b.ctx.maxDepth > 0 && depth >= b.ctx.maxDepth {
+		fmt.Printf("max depth of %v achieved, returning early", depth)
+		return
 	}
 	for i, _ := v.Fields(cue.Optional(true), cue.Hidden(false)); i.Next(); {
 		label := i.Label()
@@ -167,6 +172,6 @@ func (b *builder) buildCoreStruct(v cue.Value) {
 			b.properties[label] = sub
 			b.keys = append(b.keys, label)
 		}
-		sub.buildCore(i.Value())
+		sub.buildCore(i.Value(), depth+1)
 	}
 }
