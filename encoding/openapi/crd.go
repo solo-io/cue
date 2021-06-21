@@ -63,6 +63,34 @@ func (b *builder) coreSchemaWithName(name string) *ast.StructLit {
 	return s
 }
 
+func (b *builder) isUnstructured() bool {
+	path := b.ctx.path
+	if len(path) == 0 {
+		return false
+	}
+	if path[len(path)-1] == "*" {
+		path = path[:len(path)-1]
+	}
+	for _, unstructuredPath := range b.ctx.unstructuredObjPaths {
+		if stringSliceEqual(path, unstructuredPath) {
+			return true
+		}
+	}
+	return false
+}
+
+func stringSliceEqual(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
+}
+
 // coreSchema creates the core part of a structural OpenAPI.
 func (b *builder) coreSchema() *ast.StructLit {
 	switch b.kind {
@@ -79,6 +107,11 @@ func (b *builder) coreSchema() *ast.StructLit {
 			sub := b.properties[k]
 			p.Set(k, sub.coreSchemaWithName(k))
 		}
+
+		if b.isUnstructured() {
+			b.setSingle("x-kubernetes-preserve-unknown-fields", ast.NewBool(true), false)
+		}
+
 		if p.len() > 0 || b.items != nil {
 			b.setType("object", "")
 		}

@@ -16,6 +16,7 @@ package openapi
 
 import (
 	"fmt"
+	"log"
 	"math"
 	"path"
 	"regexp"
@@ -45,6 +46,8 @@ type buildContext struct {
 	descFunc      func(v cue.Value) string
 	fieldFilter   *regexp.Regexp
 	evalDepth     int // detect cycles when resolving references
+
+	unstructuredObjPaths [][]string // map of filename to the set of paths ([]string) to treat
 
 	schemas *OrderedMap
 
@@ -94,16 +97,17 @@ func schemas(g *Generator, inst *cue.Instance) (schemas *ast.StructLit, err erro
 	}
 
 	c := buildContext{
-		inst:         inst,
-		instExt:      inst,
-		refPrefix:    "components/schemas",
-		expandRefs:   g.ExpandReferences,
-		structural:   g.ExpandReferences,
-		nameFunc:     g.ReferenceFunc,
-		descFunc:     g.DescriptionFunc,
-		schemas:      &OrderedMap{},
-		externalRefs: map[string]*externalType{},
-		fieldFilter:  fieldFilter,
+		inst:                 inst,
+		instExt:              inst,
+		refPrefix:            "components/schemas",
+		expandRefs:           g.ExpandReferences,
+		structural:           g.ExpandReferences,
+		unstructuredObjPaths: g.UnstructuredFields[inst.ImportPath],
+		nameFunc:             g.ReferenceFunc,
+		descFunc:             g.DescriptionFunc,
+		schemas:              &OrderedMap{},
+		externalRefs:         map[string]*externalType{},
+		fieldFilter:          fieldFilter,
 	}
 
 	switch g.Version {
@@ -181,6 +185,7 @@ func schemas(g *Generator, inst *cue.Instance) (schemas *ast.StructLit, err erro
 }
 
 func (c *buildContext) build(name string, v cue.Value) *ast.StructLit {
+	log.Printf("cue/encoding/openapi: building schema for %v", name)
 	return newCoreBuilder(c).schema(nil, name, v)
 }
 
