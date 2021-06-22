@@ -68,9 +68,6 @@ func (b *builder) isUnstructured() bool {
 	if len(path) == 0 {
 		return false
 	}
-	if path[len(path)-1] == "*" {
-		path = path[:len(path)-1]
-	}
 	for _, unstructuredPath := range b.ctx.unstructuredObjPaths {
 		if stringSliceEqual(path, unstructuredPath) {
 			return true
