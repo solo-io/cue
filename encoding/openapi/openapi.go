@@ -66,6 +66,11 @@ type Config struct {
 	// OpenAPI Schema. It is an error for an CUE value to refer to itself
 	// if this option is used.
 	ExpandReferences bool
+
+	// UnstructuredFields is map of:
+	// go package to type name to the list of fields on the type which should be treated as unstructured
+	// for the purpose of openapi schema generation
+	UnstructuredFields map[string][][]string
 }
 
 type Generator = Config
