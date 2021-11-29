@@ -17,8 +17,8 @@ package subsume
 import (
 	"fmt"
 
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/export"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/export"
 )
 
 // Notes:

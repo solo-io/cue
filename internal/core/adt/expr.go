@@ -22,9 +22,9 @@ import (
 
 	"github.com/cockroachdb/apd/v2"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // A StructLit represents an unevaluated struct literal or file body.

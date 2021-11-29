@@ -17,7 +17,7 @@ package ast
 import (
 	"fmt"
 
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // Walk traverses an AST in depth-first order: It starts by calling f(node);

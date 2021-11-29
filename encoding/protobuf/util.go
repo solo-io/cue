@@ -21,8 +21,8 @@ import (
 	"github.com/emicklei/proto"
 	"golang.org/x/xerrors"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // failf panics with a marked error that can be intercepted upon returning

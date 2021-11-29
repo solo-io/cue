@@ -9,10 +9,10 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/third_party/yaml"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/third_party/yaml"
 )
 
 var unmarshalIntTest = 123

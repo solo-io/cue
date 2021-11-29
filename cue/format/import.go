@@ -18,8 +18,8 @@ import (
 	"sort"
 	"strconv"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // sortImports sorts runs of consecutive import lines in import blocks in f.

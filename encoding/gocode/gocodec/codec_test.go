@@ -22,7 +22,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/kr/pretty"
 
-	"cuelang.org/go/cue"
+	"github.com/solo-io/cue/cue"
 )
 
 type Sum struct {

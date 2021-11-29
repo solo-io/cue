@@ -24,19 +24,19 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/load"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/encoding/json"
-	"cuelang.org/go/encoding/protobuf"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/third_party/yaml"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/load"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/encoding/json"
+	"github.com/solo-io/cue/encoding/protobuf"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/third_party/yaml"
 )
 
 func newImportCmd(c *Command) *cobra.Command {

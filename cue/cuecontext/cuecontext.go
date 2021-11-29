@@ -15,10 +15,10 @@
 package cuecontext
 
 import (
-	"cuelang.org/go/cue"
-	"cuelang.org/go/internal/core/runtime"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/internal/core/runtime"
 
-	_ "cuelang.org/go/pkg"
+	_ "github.com/solo-io/cue/pkg"
 )
 
 // Option controls a build context.

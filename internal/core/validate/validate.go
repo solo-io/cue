@@ -16,7 +16,7 @@
 package validate
 
 import (
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 type Config struct {

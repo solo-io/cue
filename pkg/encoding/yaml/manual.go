@@ -18,11 +18,11 @@ import (
 	"bytes"
 	"io"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/internal"
-	cueyaml "cuelang.org/go/internal/encoding/yaml"
-	"cuelang.org/go/internal/third_party/yaml"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/internal"
+	cueyaml "github.com/solo-io/cue/internal/encoding/yaml"
+	"github.com/solo-io/cue/internal/third_party/yaml"
 )
 
 // Marshal returns the YAML encoding of v.

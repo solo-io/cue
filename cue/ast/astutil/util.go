@@ -19,8 +19,8 @@ import (
 	"strconv"
 	"strings"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // ImportPathName derives the package name from the given import path.

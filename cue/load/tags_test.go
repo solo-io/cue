@@ -21,10 +21,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/cuecontext"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/diff"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/cuecontext"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/diff"
 )
 
 var testTagVars = map[string]TagVar{

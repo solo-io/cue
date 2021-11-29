@@ -19,12 +19,12 @@ import (
 	"strings"
 	"unicode"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/scanner"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/astinternal"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/scanner"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/astinternal"
 )
 
 var debugStr = astinternal.DebugStr

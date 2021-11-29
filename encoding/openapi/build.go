@@ -24,12 +24,12 @@ import (
 	"strconv"
 	"strings"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 type buildContext struct {

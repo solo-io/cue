@@ -17,10 +17,10 @@ package astutil_test
 import (
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal"
 	"github.com/stretchr/testify/assert"
 )
 

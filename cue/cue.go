@@ -21,7 +21,7 @@
 // A Context defines the set of active packages, the translations of field
 // names to unique codes, as well as the set of builtins. Use
 //
-//     import "cuelang.org/go/cue/cuecontext"
+//     import "github.com/solo-io/cue/cue/cuecontext"
 //
 //     ctx := cuecontext.New()
 //

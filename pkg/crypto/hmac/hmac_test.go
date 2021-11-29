@@ -16,7 +16,7 @@ package hmac_test
 import (
 	"testing"
 
-	"cuelang.org/go/pkg/internal/builtintest"
+	"github.com/solo-io/cue/pkg/internal/builtintest"
 )
 
 func TestBuiltin(t *testing.T) {

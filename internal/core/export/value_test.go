@@ -18,16 +18,16 @@ import (
 	"fmt"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/compile"
-	"cuelang.org/go/internal/core/eval"
-	"cuelang.org/go/internal/core/export"
-	"cuelang.org/go/internal/core/runtime"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/cuetxtar"
 	"github.com/rogpeppe/go-internal/txtar"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/compile"
+	"github.com/solo-io/cue/internal/core/eval"
+	"github.com/solo-io/cue/internal/core/export"
+	"github.com/solo-io/cue/internal/core/runtime"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/cuetxtar"
 )
 
 var exclude = map[string]string{

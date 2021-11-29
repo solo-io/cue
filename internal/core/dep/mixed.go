@@ -17,7 +17,7 @@ package dep
 import (
 	"fmt"
 
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // dynamic visits conjuncts of structs that are defined by the root for all

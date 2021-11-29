@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"text/scanner"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/cue/token"
 	"github.com/emicklei/proto"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/cue/token"
 )
 
 func protoToCUE(typ string, options []*proto.Option) ast.Expr {

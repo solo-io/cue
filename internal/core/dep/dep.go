@@ -18,7 +18,7 @@ package dep
 import (
 	"errors"
 
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // A Dependency is a reference and the node that reference resolves to.

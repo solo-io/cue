@@ -22,10 +22,10 @@ import (
 	"reflect"
 	"testing"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/internal/task"
-	"cuelang.org/go/internal/value"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/internal/task"
+	"github.com/solo-io/cue/internal/value"
 )
 
 func parse(t *testing.T, kind, expr string) cue.Value {

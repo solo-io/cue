@@ -17,7 +17,7 @@
 // The pivotal error type in CUE packages is the interface type Error.
 // The information available in such errors can be most easily retrieved using
 // the Path, Positions, and Print functions.
-package errors // import "cuelang.org/go/cue/errors"
+package errors // import "github.com/solo-io/cue/cue/errors"
 
 import (
 	"bytes"
@@ -31,7 +31,7 @@ import (
 	"github.com/mpvl/unique"
 	"golang.org/x/xerrors"
 
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // New is a convenience wrapper for errors.New in the core library.

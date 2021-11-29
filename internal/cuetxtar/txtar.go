@@ -26,14 +26,14 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/cue/load"
-	"cuelang.org/go/internal/cuetest"
 	"github.com/google/go-cmp/cmp"
 	"github.com/rogpeppe/go-internal/txtar"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/cue/load"
+	"github.com/solo-io/cue/internal/cuetest"
 )
 
 // A TxTarTest represents a test run that process all CUE tests in the txtar

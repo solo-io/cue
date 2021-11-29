@@ -21,7 +21,7 @@ package path_test
 import (
 	"fmt"
 
-	"cuelang.org/go/pkg/path"
+	"github.com/solo-io/cue/pkg/path"
 )
 
 func ExampleSplitList() {

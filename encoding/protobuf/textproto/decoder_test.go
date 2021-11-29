@@ -18,13 +18,13 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/encoding/protobuf/textproto"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/cuetxtar"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/encoding/protobuf/textproto"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/cuetxtar"
 )
 
 func TestParse(t *testing.T) {

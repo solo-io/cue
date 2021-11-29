@@ -20,8 +20,8 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/internal/task"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/internal/task"
 )
 
 func TestEnv(t *testing.T) {

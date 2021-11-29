@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/tools/flow"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/tools/flow"
 )
 
 func Example() {

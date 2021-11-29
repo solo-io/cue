@@ -19,10 +19,10 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/cue/token"
 	"github.com/google/go-cmp/cmp"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/cue/token"
 )
 
 func TestEncodeFile(t *testing.T) {

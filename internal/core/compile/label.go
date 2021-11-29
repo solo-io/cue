@@ -18,10 +18,10 @@ import (
 	"github.com/cockroachdb/apd/v2"
 	"golang.org/x/text/unicode/norm"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // LabelFromNode converts an ADT node to a feature.

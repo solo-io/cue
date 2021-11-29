@@ -19,8 +19,8 @@ import (
 	"reflect"
 	"testing"
 
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/token"
 )
 
 const testdata = "./testdata/"

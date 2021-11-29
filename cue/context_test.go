@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"testing"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/cuecontext"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/cuecontext"
 )
 
 func TestNewList(t *testing.T) {

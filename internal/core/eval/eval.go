@@ -15,8 +15,8 @@
 package eval
 
 import (
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/debug"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/debug"
 )
 
 func Evaluate(r adt.Runtime, v *adt.Vertex) {

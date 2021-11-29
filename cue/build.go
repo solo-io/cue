@@ -15,12 +15,12 @@
 package cue
 
 import (
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/runtime"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/runtime"
 )
 
 // A Runtime is used for creating CUE Values.

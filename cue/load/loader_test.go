@@ -26,9 +26,9 @@ import (
 
 	"github.com/kylelemons/godebug/diff"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal/str"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal/str"
 )
 
 // TestLoad is an end-to-end test.

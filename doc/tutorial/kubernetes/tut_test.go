@@ -31,10 +31,10 @@ import (
 
 	"github.com/kylelemons/godebug/diff"
 
-	"cuelang.org/go/cmd/cue/cmd"
-	"cuelang.org/go/cue/load"
-	"cuelang.org/go/internal/copy"
-	"cuelang.org/go/internal/cuetest"
+	"github.com/solo-io/cue/cmd/cue/cmd"
+	"github.com/solo-io/cue/cue/load"
+	"github.com/solo-io/cue/internal/copy"
+	"github.com/solo-io/cue/internal/cuetest"
 )
 
 var (

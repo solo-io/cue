@@ -20,8 +20,8 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/encoding/gocode/testdata/pkg1"
-	"cuelang.org/go/encoding/gocode/testdata/pkg2"
+	"github.com/solo-io/cue/encoding/gocode/testdata/pkg1"
+	"github.com/solo-io/cue/encoding/gocode/testdata/pkg2"
 )
 
 func TestPackages(t *testing.T) {

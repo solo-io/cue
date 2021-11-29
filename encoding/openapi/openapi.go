@@ -19,11 +19,11 @@ import (
 	"fmt"
 	"strings"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
-	cuejson "cuelang.org/go/encoding/json"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
+	cuejson "github.com/solo-io/cue/encoding/json"
 )
 
 // A Config defines options for converting CUE to and from OpenAPI.

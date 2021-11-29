@@ -15,10 +15,10 @@
 package internal
 
 import (
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/eval"
-	"cuelang.org/go/internal/core/runtime"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/eval"
+	"github.com/solo-io/cue/internal/core/runtime"
 )
 
 func Register(importPath string, p *Package) {

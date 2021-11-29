@@ -15,7 +15,7 @@
 // Package scanner implements a scanner for CUE source text. It takes a []byte
 // as source which can then be tokenized through repeated calls to the Scan
 // method.
-package scanner // import "cuelang.org/go/cue/scanner"
+package scanner // import "github.com/solo-io/cue/cue/scanner"
 
 import (
 	"bytes"
@@ -26,7 +26,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // An ErrorHandler is a generic error handler used throughout CUE packages.

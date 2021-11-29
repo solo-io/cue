@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal/core/export"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal/core/export"
 )
 
 // TODO:

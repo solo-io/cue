@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"sort"
 
-	"cuelang.org/go/cue"
+	"github.com/solo-io/cue/cue"
 )
 
 // Drop reports the suffix of list x after the first n elements,

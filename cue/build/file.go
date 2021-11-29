@@ -14,7 +14,7 @@
 
 package build
 
-import "cuelang.org/go/cue/errors"
+import "github.com/solo-io/cue/cue/errors"
 
 // A File represents a file that is part of the build process.
 type File struct {

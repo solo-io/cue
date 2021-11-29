@@ -23,13 +23,13 @@ import (
 	"sync"
 	"testing"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/cuecontext"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/cuetxtar"
-	"cuelang.org/go/tools/flow"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/cuecontext"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/cuetxtar"
+	"github.com/solo-io/cue/tools/flow"
 )
 
 // TestTasks tests the logic that determines which nodes are tasks and what are

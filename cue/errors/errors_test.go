@@ -18,7 +18,7 @@ import (
 	"bytes"
 	"testing"
 
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/token"
 )
 
 func TestError_Error(t *testing.T) {

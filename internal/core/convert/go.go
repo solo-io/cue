@@ -28,14 +28,14 @@ import (
 	"github.com/cockroachdb/apd/v2"
 	"golang.org/x/text/encoding/unicode"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/compile"
-	"cuelang.org/go/internal/types"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/compile"
+	"github.com/solo-io/cue/internal/types"
 )
 
 // This file contains functionality for converting Go to CUE.

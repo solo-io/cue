@@ -19,7 +19,7 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue"
+	"github.com/solo-io/cue/cue"
 )
 
 func TestParseHeaders(t *testing.T) {

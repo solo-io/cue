@@ -17,11 +17,11 @@
 package parser
 
 import (
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/source"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/source"
 )
 
 // Option specifies a parse option.

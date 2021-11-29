@@ -31,13 +31,13 @@ import (
 	"golang.org/x/tools/go/packages"
 	"golang.org/x/tools/txtar"
 
-	"cuelang.org/go/cue"
-	cueast "cuelang.org/go/cue/ast"
-	cueformat "cuelang.org/go/cue/format"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/pkg/encoding/yaml"
-	"cuelang.org/go/tools/fix"
+	"github.com/solo-io/cue/cue"
+	cueast "github.com/solo-io/cue/cue/ast"
+	cueformat "github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/pkg/encoding/yaml"
+	"github.com/solo-io/cue/tools/fix"
 )
 
 //go:generate go run gen.go

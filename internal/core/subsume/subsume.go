@@ -16,9 +16,9 @@
 package subsume
 
 import (
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // Profile configures the type of subsumption. One should typically use one

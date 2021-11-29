@@ -21,14 +21,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/export"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/export"
 )
 
 // root.

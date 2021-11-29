@@ -1,8 +1,8 @@
 package foo
 
 import (
-    "cuelang.org/go/foo"
-    "cuelang.org/go/bar"
+    "github.com/solo-io/cue/foo"
+    "github.com/solo-io/cue/bar"
     "time"
 )
 
@@ -10,15 +10,15 @@ import (
     time1 "time"
 
     // comment f2
-    f2 "cuelang.org/go/foo"
-    f1 "cuelang.org/go/foo"
+    f2 "github.com/solo-io/cue/foo"
+    f1 "github.com/solo-io/cue/foo"
 )
 
 import (
     time2 "time"
 
-    same "cuelang.org/go/foo" // comment 1
-    same2 "cuelang.org/go/foo" // comment 2
+    same "github.com/solo-io/cue/foo" // comment 1
+    same2 "github.com/solo-io/cue/foo" // comment 2
 )
 
 

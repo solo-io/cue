@@ -18,8 +18,8 @@ import (
 	"path"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
 	"github.com/google/go-cmp/cmp"
+	"github.com/solo-io/cue/cue/ast"
 )
 
 func TestImportInfo(t *testing.T) {

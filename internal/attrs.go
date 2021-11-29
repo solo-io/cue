@@ -20,9 +20,9 @@ import (
 	"strings"
 	"unicode"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // AttrKind indicates the location of an attribute within CUE source.

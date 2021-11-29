@@ -23,8 +23,8 @@ package debug
 import (
 	"fmt"
 
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 type compactPrinter struct {

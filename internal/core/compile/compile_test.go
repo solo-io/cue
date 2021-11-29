@@ -20,13 +20,13 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/internal/core/compile"
-	"cuelang.org/go/internal/core/debug"
-	"cuelang.org/go/internal/core/runtime"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/cuetxtar"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/internal/core/compile"
+	"github.com/solo-io/cue/internal/core/debug"
+	"github.com/solo-io/cue/internal/core/runtime"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/cuetxtar"
 )
 
 var (

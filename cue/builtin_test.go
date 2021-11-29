@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"testing"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/token"
 
-	_ "cuelang.org/go/pkg"
+	_ "github.com/solo-io/cue/pkg"
 )
 
 func TestBuiltins(t *testing.T) {

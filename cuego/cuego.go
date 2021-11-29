@@ -19,10 +19,10 @@ import (
 	"reflect"
 	"sync"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/cuecontext"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/internal/value"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/cuecontext"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/internal/value"
 )
 
 // DefaultContext is the shared context used with top-level functions.

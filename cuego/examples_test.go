@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"strings"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cuego"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cuego"
 )
 
 func ExampleComplete_structTag() {

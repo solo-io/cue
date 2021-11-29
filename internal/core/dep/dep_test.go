@@ -19,14 +19,14 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/debug"
-	"cuelang.org/go/internal/core/dep"
-	"cuelang.org/go/internal/core/eval"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/cuetxtar"
-	"cuelang.org/go/internal/value"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/debug"
+	"github.com/solo-io/cue/internal/core/dep"
+	"github.com/solo-io/cue/internal/core/eval"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/cuetxtar"
+	"github.com/solo-io/cue/internal/value"
 )
 
 func TestVisit(t *testing.T) {

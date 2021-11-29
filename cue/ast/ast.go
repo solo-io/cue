@@ -14,14 +14,14 @@
 
 // Package ast declares the types used to represent syntax trees for CUE
 // packages.
-package ast // import "cuelang.org/go/cue/ast"
+package ast // import "github.com/solo-io/cue/cue/ast"
 
 import (
 	"fmt"
 	"strings"
 
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // ----------------------------------------------------------------------------

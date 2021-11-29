@@ -18,12 +18,12 @@ import (
 	"fmt"
 	"testing"
 
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal/core/eval"
-	"cuelang.org/go/internal/core/export"
-	"cuelang.org/go/internal/core/runtime"
-	"cuelang.org/go/internal/core/validate"
-	"cuelang.org/go/internal/cuetxtar"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal/core/eval"
+	"github.com/solo-io/cue/internal/core/export"
+	"github.com/solo-io/cue/internal/core/runtime"
+	"github.com/solo-io/cue/internal/core/validate"
+	"github.com/solo-io/cue/internal/cuetxtar"
 )
 
 func Run(name string, t *testing.T) {

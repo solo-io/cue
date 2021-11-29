@@ -24,11 +24,11 @@ import (
 
 	"github.com/kylelemons/godebug/diff"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/load"
-	"cuelang.org/go/internal/cuetest"
-	_ "cuelang.org/go/pkg"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/load"
+	"github.com/solo-io/cue/internal/cuetest"
+	_ "github.com/solo-io/cue/pkg"
 )
 
 func TestGenerate(t *testing.T) {
@@ -52,7 +52,7 @@ func TestGenerate(t *testing.T) {
 			inst := cue.Build(load.Instances([]string{pkg}, &load.Config{
 				Dir:        dir,
 				ModuleRoot: dir,
-				Module:     "cuelang.org/go/encoding/gocode/testdata",
+				Module:     "github.com/solo-io/cue/encoding/gocode/testdata",
 			}))[0]
 			if err := inst.Err; err != nil {
 				t.Fatal(err)

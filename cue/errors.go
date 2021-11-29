@@ -15,10 +15,10 @@
 package cue
 
 import (
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/runtime"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/runtime"
 )
 
 func (v Value) toErr(b *adt.Bottom) (err errors.Error) {

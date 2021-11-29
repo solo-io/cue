@@ -3,7 +3,7 @@ package pkg1
 import (
 	"math"
 	"strings"
-	"cuelang.org/go/encoding/gocode/testdata/pkg2"
+	"github.com/solo-io/cue/encoding/gocode/testdata/pkg2"
 )
 
 MyStruct: {

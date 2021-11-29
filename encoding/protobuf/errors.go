@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"strings"
 
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // protobufError implements cue/Error

@@ -32,9 +32,9 @@ import (
 	"github.com/rogpeppe/go-internal/testscript"
 	"github.com/rogpeppe/go-internal/txtar"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/internal/cuetest"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/internal/cuetest"
 )
 
 const (

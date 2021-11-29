@@ -19,9 +19,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
 )
 
 func lastError(p *build.Instance) *PackageError {

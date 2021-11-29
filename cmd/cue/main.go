@@ -17,7 +17,7 @@ package main
 import (
 	"os"
 
-	"cuelang.org/go/cmd/cue/cmd"
+	"github.com/solo-io/cue/cmd/cue/cmd"
 )
 
 func main() {

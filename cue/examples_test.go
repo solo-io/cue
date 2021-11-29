@@ -19,10 +19,10 @@ import (
 	"io/ioutil"
 	"os"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/cuecontext"
-	"cuelang.org/go/internal/cuetxtar"
 	"github.com/rogpeppe/go-internal/txtar"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/cuecontext"
+	"github.com/solo-io/cue/internal/cuetxtar"
 )
 
 func load(file string) *cue.Instance {

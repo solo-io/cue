@@ -15,8 +15,8 @@
 package compile
 
 import (
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // This file contains predeclared builtins.

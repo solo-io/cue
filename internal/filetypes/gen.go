@@ -21,9 +21,9 @@ import (
 	"log"
 	"os"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/load"
-	"cuelang.org/go/encoding/gocode"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/load"
+	"github.com/solo-io/cue/encoding/gocode"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	inst := cue.Build(load.Instances([]string{"types.cue"}, &load.Config{
 		Dir:        cwd,
 		ModuleRoot: cwd,
-		Module:     "cuelang.org/go/cue/build",
+		Module:     "github.com/solo-io/cue/cue/build",
 	}))[0]
 	if inst.Err != nil {
 		log.Fatal(inst.Err)

@@ -13,10 +13,10 @@ import (
 	"strings"
 	"time"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal"
 )
 
 const (

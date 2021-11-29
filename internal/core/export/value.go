@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"strings"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 func (e *exporter) bareValue(v adt.Value) ast.Expr {

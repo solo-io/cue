@@ -16,7 +16,7 @@ package subsume
 
 // TODO: structural subsumption has not yet been implemented.
 
-import "cuelang.org/go/internal/core/adt"
+import "github.com/solo-io/cue/internal/core/adt"
 
 func (s *subsumer) subsumes(gt, lt adt.Conjunct) bool {
 	if gt == lt {

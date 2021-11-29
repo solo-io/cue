@@ -22,8 +22,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/internal/task"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/internal/task"
 )
 
 func init() {
