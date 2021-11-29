@@ -23,9 +23,9 @@ import (
 	"regexp"
 	"strings"
 
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // A match represents the result of matching a single package pattern.

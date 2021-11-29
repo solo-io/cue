@@ -18,7 +18,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"cuelang.org/go/cue/ast"
+	"github.com/solo-io/cue/cue/ast"
 )
 
 // IsPackage reports whether a command-line argument is a package based on its

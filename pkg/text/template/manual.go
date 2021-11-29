@@ -18,7 +18,7 @@ import (
 	"bytes"
 	"text/template"
 
-	"cuelang.org/go/cue"
+	"github.com/solo-io/cue/cue"
 )
 
 // Execute executes a Go-style template.

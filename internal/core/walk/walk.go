@@ -18,7 +18,7 @@ package walk
 import (
 	"fmt"
 
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // Features calls f for all features used in x and indicates whether the

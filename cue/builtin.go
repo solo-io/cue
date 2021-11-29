@@ -15,8 +15,8 @@
 package cue
 
 import (
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 func pos(n adt.Node) (p token.Pos) {

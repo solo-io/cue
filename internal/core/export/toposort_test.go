@@ -18,9 +18,9 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/runtime"
 	"github.com/google/go-cmp/cmp"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/runtime"
 )
 
 func TestSortArcs(t *testing.T) {

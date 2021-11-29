@@ -26,16 +26,16 @@ import (
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/load"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/encoding"
-	"cuelang.org/go/internal/filetypes"
-	"cuelang.org/go/internal/value"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/load"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/encoding"
+	"github.com/solo-io/cue/internal/filetypes"
+	"github.com/solo-io/cue/internal/value"
 )
 
 // Disallow

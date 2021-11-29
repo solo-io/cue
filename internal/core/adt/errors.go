@@ -32,10 +32,10 @@ package adt
 //
 
 import (
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	cueformat "cuelang.org/go/cue/format"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	cueformat "github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // ErrorCode indicates the type of error. The type of error may influence

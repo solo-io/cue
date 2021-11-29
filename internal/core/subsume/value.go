@@ -17,8 +17,8 @@ package subsume
 import (
 	"bytes"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 func (s *subsumer) values(a, b adt.Value) (result bool) {

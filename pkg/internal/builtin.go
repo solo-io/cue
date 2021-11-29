@@ -18,12 +18,12 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/compile"
-	"cuelang.org/go/internal/core/convert"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/compile"
+	"github.com/solo-io/cue/internal/core/convert"
 )
 
 // A Builtin is a Builtin function or constant.

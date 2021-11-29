@@ -19,7 +19,7 @@ import (
 	"strings"
 	"testing"
 
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/token"
 )
 
 func TestAttributeBody(t *testing.T) {

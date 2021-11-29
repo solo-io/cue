@@ -14,7 +14,7 @@
 
 // Package token defines constants representing the lexical tokens of the Go
 // programming language and basic operations on tokens (printing, predicates).
-package token // import "cuelang.org/go/cue/token"
+package token // import "github.com/solo-io/cue/cue/token"
 
 import "strconv"
 

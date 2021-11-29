@@ -17,8 +17,8 @@ package fix
 import (
 	"testing"
 
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/cue/parser"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/cue/parser"
 )
 
 func TestFile(t *testing.T) {

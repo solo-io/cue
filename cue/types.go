@@ -25,20 +25,20 @@ import (
 
 	"github.com/cockroachdb/apd/v2"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/compile"
-	"cuelang.org/go/internal/core/convert"
-	"cuelang.org/go/internal/core/eval"
-	"cuelang.org/go/internal/core/export"
-	"cuelang.org/go/internal/core/runtime"
-	"cuelang.org/go/internal/core/subsume"
-	"cuelang.org/go/internal/core/validate"
-	"cuelang.org/go/internal/types"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/compile"
+	"github.com/solo-io/cue/internal/core/convert"
+	"github.com/solo-io/cue/internal/core/eval"
+	"github.com/solo-io/cue/internal/core/export"
+	"github.com/solo-io/cue/internal/core/runtime"
+	"github.com/solo-io/cue/internal/core/subsume"
+	"github.com/solo-io/cue/internal/core/validate"
+	"github.com/solo-io/cue/internal/types"
 )
 
 // Kind determines the underlying type of a Value.
@@ -1009,19 +1009,19 @@ You could file a bug with the above information at:
 		var expr ast.Expr
 		expr, err = p.Value(v.idx, pkgID, v.v)
 		if err != nil {
-			return bad(`"cuelang.org/go/internal/core/export".Value`, err)
+			return bad(`"github.com/solo-io/cue/internal/core/export".Value`, err)
 		}
 
 		// This introduces gratuitous unshadowing!
 		f, err = astutil.ToFile(expr)
 		if err != nil {
-			return bad(`"cuelang.org/go/ast/astutil".ToFile`, err)
+			return bad(`"github.com/solo-io/cue/ast/astutil".ToFile`, err)
 		}
 		// return expr
 	} else {
 		f, err = p.Def(v.idx, pkgID, v.v)
 		if err != nil {
-			return bad(`"cuelang.org/go/internal/core/export".Def`, err)
+			return bad(`"github.com/solo-io/cue/internal/core/export".Def`, err)
 		}
 	}
 

@@ -15,10 +15,10 @@
 package export
 
 import (
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // ExtractDoc collects documentation strings for a field.

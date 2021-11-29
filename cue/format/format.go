@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Package format implements standard formatting of CUE configurations.
-package format // import "cuelang.org/go/cue/format"
+package format // import "github.com/solo-io/cue/cue/format"
 
 // TODO: this package is in need of a rewrite. When doing so, the API should
 // allow for reformatting an AST, without actually writing bytes.
@@ -28,9 +28,9 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/parser"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/parser"
+	"github.com/solo-io/cue/cue/token"
 )
 
 // An Option sets behavior of the formatter.

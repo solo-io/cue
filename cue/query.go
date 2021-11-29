@@ -15,7 +15,7 @@
 package cue
 
 import (
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 // This file contains query-related code.

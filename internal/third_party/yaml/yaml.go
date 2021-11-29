@@ -4,7 +4,7 @@
 //
 //   https://github.com/go-yaml/yaml
 //
-package yaml // import "cuelang.org/go/internal/third_party/yaml"
+package yaml // import "github.com/solo-io/cue/internal/third_party/yaml"
 
 import (
 	"errors"
@@ -15,7 +15,7 @@ import (
 	"strings"
 	"sync"
 
-	"cuelang.org/go/cue/ast"
+	"github.com/solo-io/cue/cue/ast"
 )
 
 // MapSlice encodes and decodes as a YAML map.

@@ -18,11 +18,11 @@ import (
 	"io"
 	"math/big"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/value"
 	"github.com/cockroachdb/apd/v2"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/value"
 )
 
 // CallCtxt is passed to builtin implementations that need to use a cue.Value. This is an internal type. Its interface may change.

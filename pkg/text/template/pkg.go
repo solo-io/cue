@@ -6,8 +6,8 @@
 package template
 
 import (
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/pkg/internal"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/pkg/internal"
 )
 
 func init() {

@@ -27,10 +27,10 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/internal/astinternal"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/debug"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/internal/astinternal"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/debug"
 )
 
 func getInstance(t *testing.T, body ...string) *Instance {

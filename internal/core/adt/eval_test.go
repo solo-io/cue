@@ -22,16 +22,16 @@ import (
 
 	"github.com/rogpeppe/go-internal/txtar"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/cuecontext"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/debug"
-	"cuelang.org/go/internal/core/eval"
-	"cuelang.org/go/internal/core/runtime"
-	"cuelang.org/go/internal/core/validate"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/cuetxtar"
-	_ "cuelang.org/go/pkg"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/cuecontext"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/debug"
+	"github.com/solo-io/cue/internal/core/eval"
+	"github.com/solo-io/cue/internal/core/runtime"
+	"github.com/solo-io/cue/internal/core/validate"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/cuetxtar"
+	_ "github.com/solo-io/cue/pkg"
 )
 
 var (

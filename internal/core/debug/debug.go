@@ -26,10 +26,10 @@ import (
 	"strconv"
 	"strings"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 const (

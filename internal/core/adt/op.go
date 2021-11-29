@@ -14,7 +14,7 @@
 
 package adt
 
-import "cuelang.org/go/cue/token"
+import "github.com/solo-io/cue/cue/token"
 
 // Op indicates the operation at the top of an expression tree of the expression
 // use to evaluate a value.

@@ -18,9 +18,9 @@ import (
 	"sort"
 	"strconv"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/token"
 )
 
 type LoadFunc func(pos token.Pos, path string) *Instance

@@ -15,8 +15,8 @@
 package types
 
 import (
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/runtime"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/runtime"
 )
 
 type Value struct {

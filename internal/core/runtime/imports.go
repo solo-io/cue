@@ -18,9 +18,9 @@ import (
 	"path"
 	"sync"
 
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 type PackageFunc func(ctx adt.Runtime) (*adt.Vertex, errors.Error)

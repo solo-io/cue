@@ -19,7 +19,7 @@ import (
 	"encoding/csv"
 	"io"
 
-	"cuelang.org/go/cue"
+	"github.com/solo-io/cue/cue"
 )
 
 // Encode encode the given list of lists to CSV.

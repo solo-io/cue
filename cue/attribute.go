@@ -17,10 +17,10 @@ package cue
 import (
 	"fmt"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal"
-	"cuelang.org/go/internal/core/export"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal"
+	"github.com/solo-io/cue/internal/core/export"
 )
 
 // Attribute returns the attribute data for the given key.

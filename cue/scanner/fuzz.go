@@ -17,7 +17,7 @@
 package scanner
 
 import (
-	"cuelang.org/go/cue/token"
+	"github.com/solo-io/cue/cue/token"
 )
 
 func Fuzz(b []byte) int {

@@ -27,16 +27,16 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/errors"
-	itask "cuelang.org/go/internal/task"
-	"cuelang.org/go/internal/value"
-	_ "cuelang.org/go/pkg/tool/cli" // Register tasks
-	_ "cuelang.org/go/pkg/tool/exec"
-	_ "cuelang.org/go/pkg/tool/file"
-	_ "cuelang.org/go/pkg/tool/http"
-	_ "cuelang.org/go/pkg/tool/os"
-	"cuelang.org/go/tools/flow"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/errors"
+	itask "github.com/solo-io/cue/internal/task"
+	"github.com/solo-io/cue/internal/value"
+	_ "github.com/solo-io/cue/pkg/tool/cli" // Register tasks
+	_ "github.com/solo-io/cue/pkg/tool/exec"
+	_ "github.com/solo-io/cue/pkg/tool/file"
+	_ "github.com/solo-io/cue/pkg/tool/http"
+	_ "github.com/solo-io/cue/pkg/tool/os"
+	"github.com/solo-io/cue/tools/flow"
 )
 
 const (

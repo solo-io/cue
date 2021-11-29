@@ -17,9 +17,9 @@ package fix
 import (
 	"os"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/errors"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/errors"
 )
 
 // Instances modifies all files contained in the given build instances at once.

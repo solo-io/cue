@@ -18,8 +18,8 @@ import (
 	"strconv"
 	"testing"
 
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/runtime"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/runtime"
 )
 
 func TestFeatureBool(t *testing.T) {

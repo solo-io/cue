@@ -20,9 +20,9 @@ import (
 	"strconv"
 	"testing"
 
-	"cuelang.org/go/cue/token"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
+	"github.com/solo-io/cue/cue/token"
 )
 
 func mkInt(i int) NumInfo {

@@ -18,8 +18,8 @@ import (
 	"reflect"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/internal/source"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/internal/source"
 )
 
 func Test_readSource(t *testing.T) {

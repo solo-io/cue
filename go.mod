@@ -1,4 +1,4 @@
-module cuelang.org/go
+module github.com/solo-io/cue
 
 require (
 	github.com/cockroachdb/apd v1.1.0 // indirect

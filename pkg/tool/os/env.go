@@ -21,11 +21,11 @@ import (
 	"os"
 	"strings"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/cli"
-	"cuelang.org/go/internal/task"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/cli"
+	"github.com/solo-io/cue/internal/task"
 )
 
 func init() {

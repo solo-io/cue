@@ -26,10 +26,10 @@ package flow
 // future tasks may be long running, as discussed above.
 
 import (
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/eval"
-	"cuelang.org/go/internal/value"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/eval"
+	"github.com/solo-io/cue/internal/value"
 )
 
 func (c *Controller) runLoop() {

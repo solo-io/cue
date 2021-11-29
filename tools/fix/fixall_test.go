@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"testing"
 
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal/cuetest"
-	"cuelang.org/go/internal/cuetxtar"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal/cuetest"
+	"github.com/solo-io/cue/internal/cuetxtar"
 )
 
 func TestInstances(t *testing.T) {

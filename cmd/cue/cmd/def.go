@@ -17,8 +17,8 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"cuelang.org/go/internal/encoding"
-	"cuelang.org/go/internal/filetypes"
+	"github.com/solo-io/cue/internal/encoding"
+	"github.com/solo-io/cue/internal/filetypes"
 )
 
 // newDefCmd creates a new eval command

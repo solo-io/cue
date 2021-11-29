@@ -19,8 +19,8 @@ import (
 	"path"
 	"strings"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/build"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/build"
 )
 
 // Detect detects the interpretation.

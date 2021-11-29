@@ -18,10 +18,10 @@ import (
 	"fmt"
 	"testing"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/build"
-	"cuelang.org/go/cue/token"
-	"cuelang.org/go/internal/core/debug"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/build"
+	"github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal/core/debug"
 )
 
 func TestFromExpr(t *testing.T) {

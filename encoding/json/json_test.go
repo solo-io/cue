@@ -23,8 +23,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/format"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/format"
 )
 
 func TestExtract(t *testing.T) {

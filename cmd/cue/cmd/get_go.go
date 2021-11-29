@@ -34,14 +34,14 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/tools/go/packages"
 
-	cueast "cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/cue/literal"
-	"cuelang.org/go/cue/load"
-	"cuelang.org/go/cue/parser"
-	cuetoken "cuelang.org/go/cue/token"
-	"cuelang.org/go/internal"
+	cueast "github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/cue/literal"
+	"github.com/solo-io/cue/cue/load"
+	"github.com/solo-io/cue/cue/parser"
+	cuetoken "github.com/solo-io/cue/cue/token"
+	"github.com/solo-io/cue/internal"
 )
 
 // TODO:
@@ -326,7 +326,7 @@ func initInterfaces() (err error) {
 		Dir: filepath.Join(tmpDir),
 	}
 
-	p, err := packages.Load(cfg, "cuelang.org/go/cmd/cue/cmd/interfaces")
+	p, err := packages.Load(cfg, "github.com/solo-io/cue/cmd/cue/cmd/interfaces")
 	if err != nil {
 		return fmt.Errorf("error loading embedded cuelang.org/go/cmd/cue/cmd/interfaces package: %w", err)
 	}

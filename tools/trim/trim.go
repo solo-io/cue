@@ -53,13 +53,13 @@ import (
 	"io"
 	"os"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/ast/astutil"
-	"cuelang.org/go/internal/core/adt"
-	"cuelang.org/go/internal/core/debug"
-	"cuelang.org/go/internal/core/subsume"
-	"cuelang.org/go/internal/value"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/ast/astutil"
+	"github.com/solo-io/cue/internal/core/adt"
+	"github.com/solo-io/cue/internal/core/debug"
+	"github.com/solo-io/cue/internal/core/subsume"
+	"github.com/solo-io/cue/internal/value"
 )
 
 // Config configures trim options.

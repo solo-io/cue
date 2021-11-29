@@ -17,8 +17,8 @@ package runtime
 import (
 	"reflect"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 func (x *Runtime) StoreType(t reflect.Type, src ast.Expr, expr adt.Expr) {

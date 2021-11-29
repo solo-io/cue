@@ -1,1 +1,1 @@
-module: "cuelang.org/go"
+module: "github.com/solo-io/cue"

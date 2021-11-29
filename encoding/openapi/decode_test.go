@@ -27,13 +27,13 @@ import (
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/tools/txtar"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/encoding/json"
-	"cuelang.org/go/encoding/openapi"
-	"cuelang.org/go/encoding/yaml"
-	"cuelang.org/go/internal/cuetest"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/encoding/json"
+	"github.com/solo-io/cue/encoding/openapi"
+	"github.com/solo-io/cue/encoding/yaml"
+	"github.com/solo-io/cue/internal/cuetest"
 )
 
 // TestDecode reads the testdata/*.txtar files, converts the contained

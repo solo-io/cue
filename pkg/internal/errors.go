@@ -17,8 +17,8 @@ package internal
 import (
 	"fmt"
 
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/internal/core/adt"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/internal/core/adt"
 )
 
 type bottomer interface {

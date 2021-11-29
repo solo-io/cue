@@ -25,10 +25,10 @@ import (
 
 	"github.com/kr/pretty"
 
-	"cuelang.org/go/cue/ast"
-	"cuelang.org/go/cue/errors"
-	"cuelang.org/go/cue/format"
-	"cuelang.org/go/internal/cuetest"
+	"github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue/errors"
+	"github.com/solo-io/cue/cue/format"
+	"github.com/solo-io/cue/internal/cuetest"
 )
 
 func TestExtractDefinitions(t *testing.T) {

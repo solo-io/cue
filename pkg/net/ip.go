@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"net"
 
-	"cuelang.org/go/cue"
+	"github.com/solo-io/cue/cue"
 )
 
 // IP address lengths (bytes).

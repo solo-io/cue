@@ -19,9 +19,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"cuelang.org/go/cue"
-	"cuelang.org/go/internal/cuetxtar"
 	"github.com/rogpeppe/go-internal/txtar"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/internal/cuetxtar"
 )
 
 func Benchmark(b *testing.B) {

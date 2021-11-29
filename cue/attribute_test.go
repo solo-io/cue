@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"testing"
 
-	"cuelang.org/go/cue/errors"
+	"github.com/solo-io/cue/cue/errors"
 )
 
 func TestAttributes(t *testing.T) {
