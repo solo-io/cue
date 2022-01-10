@@ -779,16 +779,16 @@ func (p *optionParser) parse(options []*proto.Option) {
 	// - interpret CUE options.
 	for _, o := range options {
 		switch o.Name {
-		case "(cue.opt).required":
+		case "(solo.io.cue.opt).required":
 			p.required = true
 			// TODO: Dropping comments. Maybe add a dummy tag?
 
-		case "(cue.opt).disable_openapi_validation":
+		case "(solo.io.cue.opt).disable_openapi_validation":
 			// this overrides the type used by the OpenAPI parser to use an ast.Struct, equivalent to a google.protobuf.Struct, which permits all fields.
 			lit := ast.NewStruct()
 			p.field.Value = lit
 
-		case "(cue.val)":
+		case "(solo.io.cue.val)":
 			// TODO: set filename and base offset.
 			expr, err := parser.ParseExpr("", o.Constant.Source)
 			if err != nil {
