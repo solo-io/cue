@@ -782,17 +782,20 @@ func (p *optionParser) parse(options []*proto.Option) {
 		// https://developers.google.com/protocol-buffers/docs/proto3#packages_and_name_resolution
 		switch o.Name {
 		case "(.solo.io.cue.opt).required":
+			fallthrough
 		case "(solo.io.cue.opt).required":
 			p.required = true
 			// TODO: Dropping comments. Maybe add a dummy tag?
 
 		case "(.solo.io.cue.opt).disable_openapi_validation":
+			fallthrough
 		case "(solo.io.cue.opt).disable_openapi_validation":
 			// this overrides the type used by the OpenAPI parser to use an ast.Struct, equivalent to a google.protobuf.Struct, which permits all fields.
 			lit := ast.NewStruct()
 			p.field.Value = lit
 
 		case "(.solo.io.cue.val)":
+			fallthrough
 		case "(solo.io.cue.val)":
 			// TODO: set filename and base offset.
 			expr, err := parser.ParseExpr("", o.Constant.Source)
