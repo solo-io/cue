@@ -15,11 +15,11 @@ install-go-tools: mod-download
 
 build:
 	mkdir -p $(OUTPUTDIR)
-	PATH=$(DEPSGOBIN):$$PATH protoc -I=$(ROOTDIR) -I=$(ROOTDIR)/imports/ --go_out=$(OUTPUTDIR) cue.proto
+	PATH=$(DEPSGOBIN):$(PATH) protoc -I=$(ROOTDIR) -I=$(ROOTDIR)/imports/ --go_out=$(OUTPUTDIR) cue.proto
 	cp $(OUTPUTDIR)/github.com/solo-io/cue/encoding/protobuf/cue/cue.pb.go $(ROOTDIR)
 	rm -rf $(OUTPUTDIR)
 
 format:
 	go mod tidy
-	PATH=$(DEPSGOBIN):$$PATH gofmt -w .
-	PATH=$(DEPSGOBIN):$$PATH goimports -w .
+	PATH=$(DEPSGOBIN):$(PATH) gofmt -w .
+	PATH=$(DEPSGOBIN):$(PATH) goimports -w .
