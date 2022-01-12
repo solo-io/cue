@@ -1,4 +1,4 @@
-all: install-go-tools build
+all: install-go-tools build format
 
 ROOTDIR := $(shell pwd)
 OUTPUTDIR = $(ROOTDIR)/_output
@@ -15,6 +15,11 @@ install-go-tools: mod-download
 
 build:
 	mkdir -p $(OUTPUTDIR)
-	PATH=$(DEPSGOBIN):$$PATH protoc -I=. -I=./imports/ --go_out=$(OUTPUTDIR) cue.proto
-	cp $(OUTPUTDIR)/github.com/solo-io/cue/encoding/protobuf/cue/cue.pb.go .
+	PATH=$(DEPSGOBIN):$$PATH protoc -I=$(ROOTDIR) -I=$(ROOTDIR)/imports/ --go_out=$(OUTPUTDIR) cue.proto
+	cp $(OUTPUTDIR)/github.com/solo-io/cue/encoding/protobuf/cue/cue.pb.go $(ROOTDIR)
 	rm -rf $(OUTPUTDIR)
+
+format:
+	go mod tidy
+	PATH=$(DEPSGOBIN):$$PATH gofmt -w .
+	PATH=$(DEPSGOBIN):$$PATH goimports -w .

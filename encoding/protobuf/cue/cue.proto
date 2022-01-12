@@ -22,5 +22,5 @@ message FieldOptions {
 
 extend google.protobuf.FieldOptions {
     string val = 123456;
-    FieldOptions opt = 1070;
+    FieldOptions opt = 1069;
 }
