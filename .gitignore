@@ -3,3 +3,5 @@ cmd/cue/cue
 **/*.test
 /dist
 /.unity-bin
+.idea
+_output
