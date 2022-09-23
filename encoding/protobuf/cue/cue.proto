@@ -20,7 +20,7 @@ message FieldOptions {
     bool disable_openapi_validation = 2;
 
     // pass field name strait through as-is as an override and do not run toLowerCamel on it. Useful for field names with a number in them like "k8s"
-    string disable_field_name_conversion = 3; 
+    string json_field_name_override = 3; 
 }
 
 extend google.protobuf.FieldOptions {
