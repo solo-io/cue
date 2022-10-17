@@ -1,0 +1,5 @@
+changelog:
+- type: NON_USER_FACING
+  description: >
+    Using the `disable_openapi_validation` proto option now disables all kubernetes CRD openapi validation for that particular
+    field, including type validation.
