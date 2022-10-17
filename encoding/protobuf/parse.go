@@ -790,13 +790,14 @@ func (p *optionParser) parse(options []*proto.Option) {
     case "(.solo.io.cue.opt).disable_openapi_validation":
       fallthrough
     case "(solo.io.cue.opt).disable_openapi_validation":
-      // this overrides the type used by the OpenAPI parser to use an ast.Struct, equivalent to a google.protobuf.Value, which permits all JSON types.
+      // this overrides the type used by the OpenAPI parser to use an ast.Struct, equivalent to a google.protobuf.Struct, which permits all fields.
       lit := ast.NewStruct()
       p.field.Value = lit
 
     case "(.solo.io.cue.opt).disable_openapi_type_validation":
       fallthrough
     case "(solo.io.cue.opt).disable_openapi_type_validation":
+      // this overrides the type used by the OpenAPI parser to use an ast.Struct, equivalent to a google.protobuf.Value, which permits all JSON types.
       p.field.Value = ast.NewIdent("_")
 
     case "(.solo.io.cue.val)":
