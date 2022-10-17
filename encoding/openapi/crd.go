@@ -44,171 +44,168 @@ package openapi
 //
 
 import (
-  "github.com/solo-io/cue/cue"
-  "github.com/solo-io/cue/cue/ast"
+	"github.com/solo-io/cue/cue"
+	"github.com/solo-io/cue/cue/ast"
 )
 
 // newCoreBuilder returns a builder that represents a structural schema.
 func newCoreBuilder(c *buildContext) *builder {
-  b := newRootBuilder(c)
-  b.properties = map[string]*builder{}
-  return b
+	b := newRootBuilder(c)
+	b.properties = map[string]*builder{}
+	return b
 }
 
 func (b *builder) coreSchemaWithName(name string) *ast.StructLit {
-  oldPath := b.ctx.path
-  b.ctx.path = append(b.ctx.path, name)
-  s := b.coreSchema()
-  b.ctx.path = oldPath
-  return s
+	oldPath := b.ctx.path
+	b.ctx.path = append(b.ctx.path, name)
+	s := b.coreSchema()
+	b.ctx.path = oldPath
+	return s
 }
 
 func (b *builder) isUnstructured() bool {
-  path := b.ctx.path
-  if len(path) == 0 {
-    return false
-  }
-  for _, unstructuredPath := range b.ctx.unstructuredObjPaths {
-    if stringSliceEqual(path, unstructuredPath) {
-      return true
-    }
-  }
-  return false
+	path := b.ctx.path
+	if len(path) == 0 {
+		return false
+	}
+	for _, unstructuredPath := range b.ctx.unstructuredObjPaths {
+		if stringSliceEqual(path, unstructuredPath) {
+			return true
+		}
+	}
+	return false
 }
 
 func stringSliceEqual(a, b []string) bool {
-  if len(a) != len(b) {
-    return false
-  }
-  for i, v := range a {
-    if v != b[i] {
-      return false
-    }
-  }
-  return true
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
 }
 
 // coreSchema creates the core part of a structural OpenAPI.
 func (b *builder) coreSchema() *ast.StructLit {
-  switch b.kind {
-  case cue.ListKind:
-    if b.items != nil {
-      b.setType("array", "")
-      schema := b.items.coreSchemaWithName("*")
-      b.setSingle("items", schema, false)
-    }
+	switch b.kind {
+	case cue.ListKind:
+		if b.items != nil {
+			b.setType("array", "")
+			schema := b.items.coreSchemaWithName("*")
+			b.setSingle("items", schema, false)
+		}
 
-  case cue.TopKind:
-    b.setSingle("x-kubernetes-preserve-unknown-fields", ast.NewBool(true), false)
+	case cue.StructKind:
+		p := &OrderedMap{}
+		for _, k := range b.keys {
+			sub := b.properties[k]
+			p.Set(k, sub.coreSchemaWithName(k))
+		}
 
-  case cue.StructKind:
-    p := &OrderedMap{}
-    for _, k := range b.keys {
-      sub := b.properties[k]
-      p.Set(k, sub.coreSchemaWithName(k))
-    }
+		if b.isUnstructured() {
+			b.setSingle("x-kubernetes-preserve-unknown-fields", ast.NewBool(true), false)
+		}
 
-    if b.isUnstructured() {
-      b.setSingle("x-kubernetes-preserve-unknown-fields", ast.NewBool(true), false)
-    }
+		if p.len() > 0 || b.items != nil {
+			b.setType("object", "")
+		}
+		if p.len() > 0 {
+			b.setSingle("properties", (*ast.StructLit)(p), false)
+		}
+		// TODO: in Structural schema only one of these is allowed.
+		if b.items != nil {
+			schema := b.items.coreSchemaWithName("*")
+			b.setSingle("additionalProperties", schema, false)
+		}
+	}
 
-    if p.len() > 0 || b.items != nil {
-      b.setType("object", "")
-    }
-    if p.len() > 0 {
-      b.setSingle("properties", (*ast.StructLit)(p), false)
-    }
-    // TODO: in Structural schema only one of these is allowed.
-    if b.items != nil {
-      schema := b.items.coreSchemaWithName("*")
-      b.setSingle("additionalProperties", schema, false)
-    }
-  }
+	// If there was only a single value associated with this node, we can
+	// safely assume there were no disjunctions etc. In structural mode this
+	// is the only chance we get to set certain properties.
+	if len(b.values) == 1 {
+		return b.fillSchema(b.values[0])
+	}
 
-  // If there was only a single value associated with this node, we can
-  // safely assume there were no disjunctions etc. In structural mode this
-  // is the only chance we get to set certain properties.
-  if len(b.values) == 1 {
-    return b.fillSchema(b.values[0])
-  }
+	// TODO: do type analysis if we have multiple values and piece out more
+	// information that applies to all possible instances.
 
-  // TODO: do type analysis if we have multiple values and piece out more
-  // information that applies to all possible instances.
-
-  return b.finish()
+	return b.finish()
 }
 
 // buildCore collects the CUE values for the structural OpenAPI tree.
 // To this extent, all fields of both conjunctions and disjunctions are
 // collected in a single properties map.
 func (b *builder) buildCore(v cue.Value) {
-  b.pushNode(v)
-  defer b.popNode()
+	b.pushNode(v)
+	defer b.popNode()
 
-  if !b.ctx.expandRefs {
-    _, r := v.Reference()
-    if len(r) > 0 {
-      return
-    }
-  }
-  b.getDoc(v)
-  format := extractFormat(v)
-  if format != "" {
-    b.format = format
-  } else {
-    v = v.Eval()
-    b.kind = v.IncompleteKind()
+	if !b.ctx.expandRefs {
+		_, r := v.Reference()
+		if len(r) > 0 {
+			return
+		}
+	}
+	b.getDoc(v)
+	format := extractFormat(v)
+	if format != "" {
+		b.format = format
+	} else {
+		v = v.Eval()
+		b.kind = v.IncompleteKind()
 
-    switch b.kind {
-    case cue.StructKind:
-      if typ, ok := v.Elem(); ok {
-        if !b.checkCycle(typ) {
-          return
-        }
-        if b.items == nil {
-          b.items = newCoreBuilder(b.ctx)
-        }
-        b.items.buildCore(typ)
-      }
-      b.buildCoreStruct(v)
+		switch b.kind {
+		case cue.StructKind:
+			if typ, ok := v.Elem(); ok {
+				if !b.checkCycle(typ) {
+					return
+				}
+				if b.items == nil {
+					b.items = newCoreBuilder(b.ctx)
+				}
+				b.items.buildCore(typ)
+			}
+			b.buildCoreStruct(v)
 
-    case cue.ListKind:
-      if typ, ok := v.Elem(); ok {
-        if !b.checkCycle(typ) {
-          return
-        }
-        if b.items == nil {
-          b.items = newCoreBuilder(b.ctx)
-        }
-        b.items.buildCore(typ)
-      }
-    }
-  }
+		case cue.ListKind:
+			if typ, ok := v.Elem(); ok {
+				if !b.checkCycle(typ) {
+					return
+				}
+				if b.items == nil {
+					b.items = newCoreBuilder(b.ctx)
+				}
+				b.items.buildCore(typ)
+			}
+		}
+	}
 
-  for _, bv := range b.values {
-    if bv.Equals(v) {
-      return
-    }
-  }
-  b.values = append(b.values, v)
+	for _, bv := range b.values {
+		if bv.Equals(v) {
+			return
+		}
+	}
+	b.values = append(b.values, v)
 }
 
 func (b *builder) buildCoreStruct(v cue.Value) {
-  op, args := v.Expr()
-  switch op {
-  case cue.OrOp, cue.AndOp:
-    for _, v := range args {
-      b.buildCore(v)
-    }
-  }
-  for i, _ := v.Fields(cue.Optional(true), cue.Hidden(false)); i.Next(); {
-    label := i.Label()
-    sub, ok := b.properties[label]
-    if !ok {
-      sub = newCoreBuilder(b.ctx)
-      b.properties[label] = sub
-      b.keys = append(b.keys, label)
-    }
-    sub.buildCore(i.Value())
-  }
+	op, args := v.Expr()
+	switch op {
+	case cue.OrOp, cue.AndOp:
+		for _, v := range args {
+			b.buildCore(v)
+		}
+	}
+	for i, _ := v.Fields(cue.Optional(true), cue.Hidden(false)); i.Next(); {
+		label := i.Label()
+		sub, ok := b.properties[label]
+		if !ok {
+			sub = newCoreBuilder(b.ctx)
+			b.properties[label] = sub
+			b.keys = append(b.keys, label)
+		}
+		sub.buildCore(i.Value())
+	}
 }
