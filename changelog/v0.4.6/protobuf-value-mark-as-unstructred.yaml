@@ -1,0 +1,4 @@
+changelog:
+- type: NON_USER_FACING
+  description: >
+    Adds "x-kubernetes-preserve-unknown-fields: true" to cue TOP types, such as google.protobuf.Value.
