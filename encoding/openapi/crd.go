@@ -98,6 +98,13 @@ func (b *builder) coreSchema() *ast.StructLit {
 			b.setSingle("items", schema, false)
 		}
 
+	case cue.TopKind:
+		// Applies to cue values with "_" type which are specified as unstructured.
+		// Particularly applies to google.protobuf.Value that are marked as unstructured via a protobuf option.
+		if b.isUnstructured() {
+			b.setSingle("x-kubernetes-preserve-unknown-fields", ast.NewBool(true), false)
+		}
+
 	case cue.StructKind:
 		p := &OrderedMap{}
 		for _, k := range b.keys {
