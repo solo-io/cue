@@ -151,6 +151,12 @@ func TestParseDefinitions(t *testing.T) {
 		in:     "cycle.cue",
 		config: &openapi.Config{Info: info, ExpandReferences: true},
 		err:    "cycle",
+	}, {
+		in: "nested-in-oneof.cue",
+		config: &openapi.Config{
+			ExpandReferences: true,
+		},
+		out: "nested-in-oneof.json",
 	}}
 	for _, tc := range testCases {
 		t.Run(tc.out, func(t *testing.T) {
@@ -166,7 +172,8 @@ func TestParseDefinitions(t *testing.T) {
 			b, err := openapi.Gen(inst, tc.config)
 			if err != nil {
 				if tc.err == "" {
-					t.Fatal("unexpected error:", errors.Details(inst.Err, nil))
+					t.Fatal("unexpected error:", errors.Details(err, nil))
+					// t.Fatal("unexpected error:", errors.Details(inst.Err, nil))
 				}
 				return
 			}
