@@ -172,8 +172,7 @@ func TestParseDefinitions(t *testing.T) {
 			b, err := openapi.Gen(inst, tc.config)
 			if err != nil {
 				if tc.err == "" {
-					t.Fatal("unexpected error:", errors.Details(err, nil))
-					// t.Fatal("unexpected error:", errors.Details(inst.Err, nil))
+					t.Fatal("unexpected error:", errors.Details(inst.Err, nil))
 				}
 				return
 			}
