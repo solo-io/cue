@@ -1,0 +1,4 @@
+changelog:
+- type: NON_USER_FACING
+  description: >
+    Fixes a bug where a type (A), which has a nested type (B) and A also has a field (c) which is a disjunction that could be of type (C) where C has a field (b) of type (B)

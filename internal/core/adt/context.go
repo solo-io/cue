@@ -35,8 +35,9 @@ import (
 var Debug bool = os.Getenv("CUE_DEBUG") != "0"
 
 // Verbosity sets the log level. There are currently only two levels:
-//   0: no logging
-//   1: logging
+//
+//	0: no logging
+//	1: logging
 var Verbosity int
 
 // Assert panics if the condition is false. Assert can be used to check for
@@ -148,7 +149,6 @@ func New(v *Vertex, cfg *Config) *OpContext {
 // operation on values that are created with the Runtime with which an OpContext
 // is associated. An OpContext is not goroutine save and only one goroutine may
 // use an OpContext at a time.
-//
 type OpContext struct {
 	Runtime
 	Format func(Node) string
@@ -629,7 +629,6 @@ func (c *OpContext) evalState(v Expr, state VertexStatus) (result Value) {
 // unifyNode returns a possibly partially evaluated node value.
 //
 // TODO: maybe return *Vertex, *Bottom
-//
 func (c *OpContext) unifyNode(v Expr, state VertexStatus) (result Value) {
 	savedSrc := c.src
 	c.src = v.Source()
@@ -761,6 +760,17 @@ func (c *OpContext) lookup(x *Vertex, pos token.Pos, l Feature, state VertexStat
 	}
 
 	a := x.Lookup(l)
+
+	if a == nil {
+		if disjunction, ok := x.BaseValue.(*Disjunction); ok {
+			for _, val := range disjunction.Values {
+				a = val.Lookup(l)
+				if a != nil {
+					break
+				}
+			}
+		}
+	}
 
 	var hasCycle bool
 outer:
